@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Denah Perpustakaan</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+    }
+    #map {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="map"></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    // Buat peta Leaflet dengan sistem koordinat sederhana
+    var map = L.map('map', {
+      crs: L.CRS.Simple,
+      minZoom: -2
+    });
+
+    // Ukuran gambar denah kamu, misalnya 1000x700 pixel
+    var bounds = [[0, 0], [1000, 1000]];
+    var ruangBaca = L.polygon([
+  [0, 0],
+  [0, 1000],
+  [169, 1000],
+  [169, 0]
+], {
+  color: 'blue',
+  fillColor: 'lightblue',
+  fillOpacity: 0.5
+}).addTo(map);
+
+  var Perpustakaan = L.polygon([
+  [169, 0],
+  [169, 1000],
+  [1000, 1000],
+  [1000, 0]
+], {
+  color: 'blue',
+  fillColor: 'lightblue',
+  fillOpacity: 0.5
+}).addTo(map);
+
+var Perpustakaan = L.polygon([
+  [169, 0],
+  [169, 1000],
+  [1000, 1000],
+  [1000, 0]
+], {
+  color: 'blue',
+  fillColor: 'lightblue',
+  fillOpacity: 0.5
+}).addTo(map);
+
+var mejaPresensi = L.polygon([
+  [169, 0],
+  [169, 47],
+  [260, 47],
+  [260, 0]
+], {
+  color: 'blue',
+  fillColor: 'lightblue',
+  fillOpacity: 0.5
+}).addTo(map);
+
+var mejaSirkulasi = L.polygon([
+  [260, 0],
+  [260, 260],
+  [500, 260],
+  [500, 0]
+], {
+  color: 'blue',
+  fillColor: 'lightblue',
+  fillOpacity: 0.5
+}).addTo(map);
+
+var terbitanBerkala = L.polygon([
+  [500, 0],
+  [500, 260],
+  [550, 260],
+  [550, 0]
+], {
+  color: 'blue',
+  fillColor: 'lightblue',
+  fillOpacity: 0.5
+}).addTo(map);
+
+var rakReferensia = L.polygon([
+  [550, 0],
+  [550, 47],
+  [700, 47],
+  [700, 0]
+], {
+  color: 'blue',
+  fillColor: 'lightblue',
+  fillOpacity: 0.5
+}).addTo(map);
+
+var rakMultimedia = L.polygon([
+  [700, 0],
+  [700, 47],
+  [850, 47],
+  [850, 0]
+], {
+  color: 'blue',
+  fillColor: 'lightblue',
+  fillOpacity: 0.5
+}).addTo(map);
+
+var rakReferensib = L.polygon([
+  [850, 0],
+  [850, 47],
+  [1000, 47],
+  [1000, 0]
+], {
+  color: 'blue',
+  fillColor: 'lightblue',
+  fillOpacity: 0.5
+}).addTo(map);
+
+var rakMultimediab = L.polygon([
+  [925, 47],
+  [925, 125],
+  [1000, 125],
+  [1000, 47]
+], {
+  color: 'blue',
+  fillColor: 'lightblue',
+  fillOpacity: 0.5
+}).addTo(map);
+
+var rakDisplaygajah = L.polygon([
+  [925, 150],
+  [925, 350],
+  [1000, 350],
+  [1000, 150]
+], {
+  color: 'blue',
+  fillColor: 'lightblue',
+  fillOpacity: 0.5
+}).addTo(map);
+
+var rakDisplayjerapah = L.polygon([
+  [850, 925],
+  [850, 1000],
+  [1000, 1000],
+  [1000, 925]
+], {
+  color: 'blue',
+  fillColor: 'lightblue',
+  fillOpacity: 0.5
+}).addTo(map);
+
+var rakBukua = L.polygon([
+  [600, 925],
+  [600, 1000],
+  [850, 1000],
+  [850, 925]
+], {
+  color: 'blue',
+  fillColor: 'lightblue',
+  fillOpacity: 0.5
+}).addTo(map);
+
+var rakBukub = L.polygon([
+  [350, 925],
+  [350, 1000],
+  [600, 1000],
+  [600, 925]
+], {
+  color: 'blue',
+  fillColor: 'lightblue',
+  fillOpacity: 0.5
+}).addTo(map);
+
+var rakBukuc = L.polygon([
+  [350, 925],
+  [350, 1000],
+  [169, 1000],
+  [169, 925]
+], {
+  color: 'blue',
+  fillColor: 'lightblue',
+  fillOpacity: 0.5
+}).addTo(map);
+
+var rakPohon = L.polygon([
+  [475, 450],
+  [475, 550],
+  [575, 550],
+  [575, 450]
+], {
+  color: 'blue',
+  fillColor: 'lightblue',
+  fillOpacity: 0.5
+}).addTo(map);
+
+var mejaReferensi = L.polygon([
+  [169, 450],
+  [169, 650],
+  [260, 650],
+  [260, 450]
+], {
+  color: 'blue',
+  fillColor: 'lightblue',
+  fillOpacity: 0.5
+}).addTo(map);
+
+var rakBukud = L.polygon([
+  [475, 625],
+  [475, 825],
+  [575, 825],
+  [575, 625]
+], {
+  color: 'blue',
+  fillColor: 'lightblue',
+  fillOpacity: 0.5
+}).addTo(map);
+
+var rakBukue = L.polygon([
+  [775, 625],
+  [775, 825],
+  [875, 825],
+  [875, 625]
+], {
+  color: 'blue',
+  fillColor: 'lightblue',
+  fillOpacity: 0.5
+}).addTo(map);
+
+var pintuPerpustakaan = L.polygon([
+  [169, 150],
+  [169, 350],
+  [200, 350],
+  [200, 150]
+], {
+  color: 'blue',
+  fillColor: 'lightblue',
+  fillOpacity: 0.5
+}).addTo(map);
+
+var papanMading = L.polygon([
+  [145, 450],
+  [145, 1000],
+  [168, 1000],
+  [168, 450]
+], {
+  color: 'blue',
+  fillColor: 'lightblue',
+  fillOpacity: 0.5
+}).addTo(map);
+
+var areaOutdoor = L.polygon([
+  [75, 600],
+  [75, 1000],
+  [144, 1000],
+  [144, 600]
+], {
+  color: 'blue',
+  fillColor: 'lightblue',
+  fillOpacity: 0.5
+}).addTo(map);
+
+var rakBukuOutdoor = L.polygon([
+  [0, 0],
+  [0, 47],
+  [168, 47],
+  [168, 0]
+], {
+  color: 'blue',
+  fillColor: 'lightblue',
+  fillOpacity: 0.5
+}).addTo(map);
+
+var areaBacaIndoorA = L.polygon([
+  [600, 350],
+  [600, 150],
+  [850, 150],
+  [850, 350]
+], {
+  color: 'blue',
+  fillColor: 'lightblue',
+  fillOpacity: 0.5
+}).addTo(map);
+
+var areaBacaIndoorB = L.polygon([
+  [625, 825],
+  [625, 625],
+  [715, 625],
+  [715, 825]
+], {
+  color: 'blue',
+  fillColor: 'lightblue',
+  fillOpacity: 0.5
+}).addTo(map);
+
+var areaBacaIndoorC = L.polygon([
+  [325, 825],
+  [325, 625],
+  [415, 625],
+  [415, 825]
+], {
+  color: 'blue',
+  fillColor: 'lightblue',
+  fillOpacity: 0.5
+}).addTo(map);
+
+// Tooltip muncul saat hover
+ruangBaca.bindTooltip("Lorong Lantai 2", {sticky: true});
+Perpustakaan.bindTooltip("Perpustakaan", {sticky: true});
+mejaPresensi.bindTooltip("Meja Presensi", {sticky: true});
+mejaSirkulasi.bindTooltip("Meja Sirkulasi", {sticky: true});
+terbitanBerkala.bindTooltip("Rak Terbitan Berkala", {sticky: true});
+rakReferensia.bindTooltip("Rak Referensi", {sticky: true});
+rakMultimedia.bindTooltip("Rak Multimedia", {sticky: true});
+rakReferensib.bindTooltip("Rak Referensi", {sticky: true});
+rakMultimediab.bindTooltip("Rak Multimedia", {sticky: true});
+rakDisplaygajah.bindTooltip("Rak Display Gajah", {sticky: true});
+rakDisplayjerapah.bindTooltip("Rak Display Jerapah", {sticky: true});
+rakBukua.bindTooltip("Rak Buku A", {sticky: true});
+rakBukub.bindTooltip("Rak Buku B", {sticky: true});
+rakBukuc.bindTooltip("Rak Buku C", {sticky: true});
+rakPohon.bindTooltip("Rak Pohon", {sticky: true});
+mejaReferensi.bindTooltip("Meja Referensi", {sticky: true});
+rakBukud.bindTooltip("Rak Buku D", {sticky: true});
+rakBukue.bindTooltip("Rak Buku E", {sticky: true});
+pintuPerpustakaan.bindTooltip("Pintu Perpustakaan", {sticky: true});
+papanMading.bindTooltip("Mading Perpustakaan", {sticky: true});
+areaOutdoor.bindTooltip("Area Baca Outdoor", {sticky: true});
+rakBukuOutdoor.bindTooltip("Rak Buku Outdoor", {sticky: true});
+areaBacaIndoorA.bindTooltip("Area Baca A", {sticky: true});
+areaBacaIndoorB.bindTooltip("Area Baca B", {sticky: true});
+areaBacaIndoorC.bindTooltip("Area Baca C", {sticky: true});
+
+// Warna berubah saat hover
+ruangBaca.on('mouseover', function () {
+  this.setStyle({ fillColor: 'yellow' });
+});
+ruangBaca.on('mouseout', function () {
+  this.setStyle({ fillColor: 'lightblue' });
+});
+
+Perpustakaan.on('mouseover', function () {
+  this.setStyle({ fillColor: 'yellow' });
+});
+Perpustakaan.on('mouseout', function () {
+  this.setStyle({ fillColor: 'lightblue' });
+});
+
+mejaPresensi.on('mouseover', function () {
+  this.setStyle({ fillColor: 'yellow' });
+});
+mejaPresensi.on('mouseout', function () {
+  this.setStyle({ fillColor: 'lightblue' });
+});
+
+mejaSirkulasi.on('mouseover', function () {
+  this.setStyle({ fillColor: 'yellow' });
+});
+mejaSirkulasi.on('mouseout', function () {
+  this.setStyle({ fillColor: 'lightblue' });
+});
+
+terbitanBerkala.on('mouseover', function () {
+  this.setStyle({ fillColor: 'yellow' });
+});
+terbitanBerkala.on('mouseout', function () {
+  this.setStyle({ fillColor: 'lightblue' });
+});
+
+rakReferensia.on('mouseover', function () {
+  this.setStyle({ fillColor: 'yellow' });
+});
+rakReferensia.on('mouseout', function () {
+  this.setStyle({ fillColor: 'lightblue' });
+});
+
+rakMultimedia.on('mouseover', function () {
+  this.setStyle({ fillColor: 'yellow' });
+});
+rakMultimedia.on('mouseout', function () {
+  this.setStyle({ fillColor: 'lightblue' });
+});
+
+rakReferensib.on('mouseover', function () {
+  this.setStyle({ fillColor: 'yellow' });
+});
+rakReferensib.on('mouseout', function () {
+  this.setStyle({ fillColor: 'lightblue' });
+});
+
+rakMultimediab.on('mouseover', function () {
+  this.setStyle({ fillColor: 'yellow' });
+});
+rakMultimediab.on('mouseout', function () {
+  this.setStyle({ fillColor: 'lightblue' });
+});
+
+rakDisplaygajah.on('mouseover', function () {
+  this.setStyle({ fillColor: 'yellow' });
+});
+rakDisplaygajah.on('mouseout', function () {
+  this.setStyle({ fillColor: 'lightblue' });
+});
+
+rakDisplayjerapah.on('mouseover', function () {
+  this.setStyle({ fillColor: 'yellow' });
+});
+rakDisplayjerapah.on('mouseout', function () {
+  this.setStyle({ fillColor: 'lightblue' });
+});
+
+rakBukua.on('mouseover', function () {
+  this.setStyle({ fillColor: 'yellow' });
+});
+rakBukua.on('mouseout', function () {
+  this.setStyle({ fillColor: 'lightblue' });
+});
+
+rakBukub.on('mouseover', function () {
+  this.setStyle({ fillColor: 'yellow' });
+});
+rakBukub.on('mouseout', function () {
+  this.setStyle({ fillColor: 'lightblue' });
+});
+
+rakBukuc.on('mouseover', function () {
+  this.setStyle({ fillColor: 'yellow' });
+});
+rakBukuc.on('mouseout', function () {
+  this.setStyle({ fillColor: 'lightblue' });
+});
+
+mejaReferensi.on('mouseover', function () {
+  this.setStyle({ fillColor: 'yellow' });
+});
+mejaReferensi.on('mouseout', function () {
+  this.setStyle({ fillColor: 'lightblue' });
+});
+
+rakPohon.on('mouseover', function () {
+  this.setStyle({ fillColor: 'yellow' });
+});
+rakPohon.on('mouseout', function () {
+  this.setStyle({ fillColor: 'lightblue' });
+});
+
+rakBukud.on('mouseover', function () {
+  this.setStyle({ fillColor: 'yellow' });
+});
+rakBukud.on('mouseout', function () {
+  this.setStyle({ fillColor: 'lightblue' });
+});
+
+rakBukue.on('mouseover', function () {
+  this.setStyle({ fillColor: 'yellow' });
+});
+rakBukue.on('mouseout', function () {
+  this.setStyle({ fillColor: 'lightblue' });
+});
+
+pintuPerpustakaan.on('mouseover', function () {
+  this.setStyle({ fillColor: 'yellow' });
+});
+pintuPerpustakaan.on('mouseout', function () {
+  this.setStyle({ fillColor: 'lightblue' });
+});
+
+papanMading.on('mouseover', function () {
+  this.setStyle({ fillColor: 'yellow' });
+});
+papanMading.on('mouseout', function () {
+  this.setStyle({ fillColor: 'lightblue' });
+});
+
+areaOutdoor.on('mouseover', function () {
+  this.setStyle({ fillColor: 'yellow' });
+});
+areaOutdoor.on('mouseout', function () {
+  this.setStyle({ fillColor: 'lightblue' });
+});
+
+rakBukuOutdoor.on('mouseover', function () {
+  this.setStyle({ fillColor: 'yellow' });
+});
+rakBukuOutdoor.on('mouseout', function () {
+  this.setStyle({ fillColor: 'lightblue' });
+});
+
+areaBacaIndoorA.on('mouseover', function () {
+  this.setStyle({ fillColor: 'yellow' });
+});
+areaBacaIndoorA.on('mouseout', function () {
+  this.setStyle({ fillColor: 'lightblue' });
+});
+
+areaBacaIndoorB.on('mouseover', function () {
+  this.setStyle({ fillColor: 'yellow' });
+});
+areaBacaIndoorB.on('mouseout', function () {
+  this.setStyle({ fillColor: 'lightblue' });
+});
+
+areaBacaIndoorC.on('mouseover', function () {
+  this.setStyle({ fillColor: 'yellow' });
+});
+areaBacaIndoorC.on('mouseout', function () {
+  this.setStyle({ fillColor: 'lightblue' });
+});
+
+    // Tampilkan gambar denah
+    L.imageOverlay('', bounds).addTo(map);
+    map.fitBounds(bounds);
+
+
+  </script>
+
+
+
+</body>
+</html>
